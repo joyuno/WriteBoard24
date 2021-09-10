@@ -1,0 +1,17 @@
+# 발견 문제점
+## 1. '조회'  /board/view.do 에서 에러 발생
+
+>**원인** : view.jsp 에서 DTO의 property를 잘못 기재
+
+```java
+//수정
+${list[0].regdate} ==> ${list[0].regdate}
+
+```
+## 3. '수정' /board/update.do 에서 에러 발생
+
+>**원인** : update.jsp에서 DTO의 name 를 잘못 기재
+
+```jsp
+//수정
+<textarea name="contnet">${list[0].content }</textarea> ==> <textarea name="content">${list[0].content }</textarea>
